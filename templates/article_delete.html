@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Postni o'chirish{% endblock title %}
+
+{% block content %}
+    <div id="contentForm">
+    	<h1>Postni o'chirish</h1>
+    	<hr>
+    	<p>
+    		<span style="font-size: large; color:crimson;">{{ article.title }}</span> postni o'chirasizmi ?</p>
+    	<form method="post">
+    		{% csrf_token %}
+    		{{ form.as_p }}
+    		<button type="submit" class="btn btn-danger my-2">O'chirish</button>
+{% endblock content %}

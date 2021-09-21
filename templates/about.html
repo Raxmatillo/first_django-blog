@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Men haqimda{% endblock title %}
+
+{% block content %}
+	<div id="contentForm">
+		<div class="row">
+			<div class="col-md-4">
+				<img src="{% static 'logo.jpg' %}" class="w-100">
+			</div>
+			<div class="col-md-8">
+				<h3 class="text-white">Ushbu blog sayt muallifi Shermatov Raxmatillo Farxod o'g'li.</h3>
+				<p class="lead" style="font-size: larger;">
+					Bu sayt - blog sayt bo'lib, turli xil qiziqarli bloglar yozib borish mumkin bo'lgan kichik bir sayt. Bu Mening birinchi demo qilgan saytim bo'ladi. Xudo xohlasa hali ko'p narsalar 
+					qo'shishni ham o'rganib olaman.</p>
+					<hr>
+				<p class="text-info">
+					Saytni yozishda HTML va CSS texnologiyalaridan, hamda bootstrap fremworkidan ham foydalanilgan. Shunga qaramay saytning asosiy dizayni o'zim yozgan CSS fayldan tashkil topgan. JavaScript dasturlash tilidan foydalanmadim. Chunki u tilni bilmayman.
+				Saytning backend qismi Pythonda ya'ni Django frameworkida yozilgan.<br>
+				Saytdan to'liq holatda foydalanish uchun siz saytga kirgan bo'lishingiz kerak bo'ladi.
+				Buning uchun <a class="link" href="{% url 'signup' %}">Ro'yxatdan o'ting</a> yoki bo'lmasam,
+				<a class="link" href="{% url 'login' %}">Login</a> tugmachasini bosing.</p>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Aloqa{% endblock title %}
+
+{% block content %}
+	<div class="box-contact w-50">
+		<div class="header text-info text-center display-6">Men bilan aloqa.</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-3">
+				<img src="{% static 'icons/5296499_fb_facebook_facebook logo_icon.svg' %}" width="30" alt="My svg">
+				<h4><a class="nav-link" href="https://facebook.com/milodmusic.fl">Facebook</a></h4>
+			</div>
+			<div class="col-sm-3">
+				<img src="{% static 'icons/3146786_instagram_logo_icon.svg' %}" width="30" alt="My svg">
+				<h4><a class="nav-link" href="https://instagram.com/raxmatillo.2001">Instagram</a></h4>
+			</div>
+			<div class="col-sm-3">
+				<img src="{% static 'icons/4745725_code_development_github_open-source_programming_icon.svg' %}" width="30" alt="My svg">
+				<h4><a class="nav-link" href="https://github.com/Raxmatillo">Github</a></h4>
+			</div>
+			<div class="col-sm-3">
+				<img src="{% static 'icons/986956_telegram_icon.svg' %}" width="30" alt="My svg">
+				<h4><a class="nav-link" href="https://t.me/MiloD_Official">Telegram</a></h4>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

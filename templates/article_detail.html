@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}{{ article.title }}{% endblock title %}
+
+{% block content %}
+	<div class="content">
+		<div class="post">
+			<h1>{{ article.title }}</h1>
+			<hr>
+			<h3>{{ article.summary }}</h3>
+			{% if article.photo %}
+				<img src="{{ article.photo.url }}" alt="{{ article.title }}" width="100%">
+			{% endif %}
+		</div>
+
+		<p>{{ article.body }}</p>
+		<hr>
+		<div class="post">
+			<p class="p-footer">
+				<i>Muallif: {{ article.author | title }}</i> 
+				Date: {{ article.date }}
+			</p>
+		</div>
+		<div class="forms">
+			<a class="forms-a" href="{% url 'article_edit' article.pk %}" role="button" class="btn btn-primary">Taxrirlash</a> | 
+			<a class="forms-a" href="{% url 'article_delete' article.pk %}" role="button" class="btn btn-danger my-2">O'chirish</a>
+		</div>
+	</div>
+{% endblock content %}

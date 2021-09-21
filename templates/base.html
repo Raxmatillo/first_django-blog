@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock title %}</title>
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<!-- Google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="navbar">
+			<div class="logo">
+				<h1><a href="{% url 'home' %}">Raxmatillo</a></h1>
+			</div>
+			<div class="links">
+				<a class="a" href="{% url 'article_list' %}">Uy</a>
+				<a class="a" href="{% url 'about' %}">Haqimizda</a>
+				<a class="a" href="{% url 'contact' %}">Aloqa</a>
+				<div class="dropdown">
+					{% if user.is_authenticated %}
+						<h6 style="color:gold;">{{ user.username }}</h6>
+					{% else %}
+						<h6 class="btn btn-danger">Login</h6>
+					{% endif %}
+					<div class="dropdown-content w-100">
+						<a href="{% url 'login' %}">Kirish</a>
+						<a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+						<a href="{% url 'password_change' %}">Parolni o'zgartirish</a>
+						<hr>
+						<a href="{% url 'logout' %}">Saytdan chiqish</a>
+					</div>
+				</div>
+				<span>
+					<a class="plus" href="{% url 'article_new' %}">+</a>
+				</span>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		{% block content %}
+			
+		{% endblock content %}
+	</div>
+</body>
+</html>
