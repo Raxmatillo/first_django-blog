@@ -4,8 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+django = "*"
+django-crispy-forms = "*"
+pillow = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.8.10"
